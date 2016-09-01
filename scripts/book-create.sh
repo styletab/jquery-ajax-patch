@@ -2,7 +2,7 @@
 
 # use like this:
 #
-#     TITLE="Harry Potter: Deathly Hallows" AUTHOR="J.K. Rowling" ./scripts/books.sh
+#     TITLE="Harry Potter: Deathly Hallows" AUTHOR="J.K. Rowling" ./scripts/book-create.sh
 #
 
 curl --include --request "POST" "http://localhost:3000/books" \
@@ -13,3 +13,4 @@ curl --include --request "POST" "http://localhost:3000/books" \
       "author": $AUTHOR
     }
   }'
+// the stuff inside the {} is JSON

@@ -2,6 +2,9 @@
 
 const app = require('../app.js');
 
+const getFormFields = require('../../../lib/get-form-fields');
+
+
 const index = function () {
   return $.ajax({
     url: app.host + '/books',
@@ -24,8 +27,7 @@ const create = function (form) {
   });
 };
 
-const destroy = function (form) {
-  let data = getFormFields(form);
+const destroy = function (data) {
   let id = data.book.id;
 
   return $.ajax({
@@ -34,9 +36,20 @@ const destroy = function (form) {
   });
 };
 
+const update = function (data) {
+  let id = data.book.id;
+  return $.ajax ({
+    url: app.host + '/books/' + id,
+    method: 'PATCH',
+    data: data,
+  });
+};
+
 module.exports = {
   index,
   show,
   create,
   destroy,
+  update,
+
 };

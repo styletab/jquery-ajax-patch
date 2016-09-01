@@ -4,3 +4,9 @@
 #
 #     ID=123 ./scripts/book-destory.sh
 #
+curl --include --request DELETE "http://localhost:3000/books/45"
+
+
+//or
+
+// curl --include --request DELETE http://localhost:3000/books/$ID
